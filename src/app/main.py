@@ -16,6 +16,11 @@ app = FastAPI()
 
 repo = Environments.get_item_repo()()
 
+
+@app.get("/")
+def main():
+    return{"teste":"testado"}
+
 @app.get("/items/get_all_items")
 def get_all_items():
     items = repo.get_all_items()
